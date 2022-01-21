@@ -170,7 +170,236 @@ CupertinoAlertDialog(
                 ],
               ),
 ```
+ ## CupertinoDatePicker
+```dart
+  void showCupertinoDatePicker() {
+    showCupertinoModalPopup(
+        context: context,
+        builder: (BuildContext builder) {
+          return Container(
+            height: MediaQuery.of(context).copyWith().size.height * 0.25,
+            color: Colors.white,
+            child: CupertinoDatePicker(
+              mode: CupertinoDatePickerMode.date,
+              onDateTimeChanged: (value) {
+                if (value != selectedDate) {
+                  setState(() {
+                    selectedDate = value;
+                    dateBirthControl.text = value.toString();
+                  });
+                }
+              },
+              initialDateTime: DateTime.now(),
+              minimumYear: 2022,
+              maximumYear: 2031,
+            ),
+          );
+        });
+  }
+
+```
+
+ ## CupertinoNavigationBar con un  CupertinoSearchTextField
+```dart
+CupertinoNavigationBar(
+                leading: CupertinoNavigationBarBackButton(
+                  onPressed: () {},
+                  color: CupertinoColors.label,
+                ),
+                middle: CupertinoSearchTextField(
+                  controller: controllerSeach,
+                  onChanged: (value) {},
+                  onSubmitted: (value) {},
+                  autocorrect: true,
+                ),
+                trailing: GestureDetector(
+                  child: const Text("Cancel"),
+                  onTap: () {
+                    controllerSeach.clear();
+                  },
+                )),
+```
+
+ ## CupertinoSlider
+```dart
+CupertinoSlider(
+                                  thumbColor: CupertinoColors.activeOrange,
+                                  value: selectedSliderValue,
+                                  min: 0,
+                                  max: 100,
+                                  divisions: 100,
+                                  onChanged: (value) {
+                                    selectedSliderValue = value;
+                                    setState(() {});
+                                  },
+                                  activeColor: CupertinoColors.activeGreen,
+                                )
+```
+
+ ## CupertinoSwitch
+```dart
+  CupertinoSwitch(
+                              value: swichstate,
+                              onChanged: (value) {
+                                swichstate = value;
+                                setState(() {});
+                              },
+                              thumbColor: CupertinoColors.activeOrange,
+                            )
+```
+
+ ## CupertinoPicker
+```dart
+CupertinoPicker(
+                children: const [
+                  Text("Red"),
+                  Text("lime"),
+                  Text("blue"),
+                  Text("Green"),
+                  Text("cyan"),
+                  Text("brown"),
+                  Text("Pink"),
+                  Text("gray"),
+                  Text("Yelow"),
+                  Text("White"),
+
+                ],
+                onSelectedItemChanged: (value) {
+                  setState(() {
+                    switch (value) {
+                      case 0:
+                        _color = Colors.red;
+                        break;
+                      case 1:
+                        _color = Colors.lime;
+                        break;
+                      case 2:
+                        _color = Colors.blue;
+                        break;
+                      case 3:
+                        _color = Colors.green;
+                        break;
+                      case 4:
+                        _color = Colors.cyan;
+                        break;
+                      case 5:
+                        _color = Colors.brown;
+                        break;
+                      case 6:
+                        _color = Colors.pink;
+                        break;
+                      case 7:
+                        _color = Colors.grey;
+                        break;
+                      case 8:
+                      _color = Colors.yellow;
+                      break;
+                      case 9:
+                      default:
+                        _color = Colors.black12;
+                    }
+                  });
+                },
+                itemExtent: 25,
+                diameterRatio: 1,
+                useMagnifier: true,
+                magnification: 1.3,
+                looping: true,
+              )
+```
 
 
+ ## CupertinoPicker
+```dart
+
+  Map<int, Widget> children = <int, Widget>{
+    0: const Expanded(
+      child: Text("BLUE"),
+    ),
+    1: const Expanded(
+      child: Text("RED"),
+    ),
+    2: const Expanded(
+      child: Text("YELLOW"),
+    ),
+  };
 
 
+  List<Widget> containers = [
+    Container(
+        color: Colors.blue,
+        height: 250,
+        child: const Center(child: Text('Blue container'))),
+    Container(
+        color: Colors.red,
+        height: 250,
+        child: const Center(child: Text('Red container'))),
+    Container(
+        color: Colors.yellow,
+        height: 250,
+        child: const Center(child: Text('Yelloe container'))),
+  ];
+
+            Column(
+                children: <Widget> [
+                  const Text("Segmented example",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    child: CupertinoSegmentedControl(
+                      children: children,
+                      onValueChanged: (index) {
+                        setState(() {
+                          selectedSegmentedIndexValue =
+                              int.parse(index.toString());
+                        });
+                      },
+                      groupValue: selectedSegmentedIndexValue,
+                      // selectedColor: CupertinoColors.activeOrange,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  containers[selectedSegmentedIndexValue],
+                  const SizedBox(
+                    height: 5,
+                  ),
+                ],
+              )
+```
+
+ ## CupertinoPicker
+```dart
+ Column(children: <Widget>[
+              const Text("Sliding Segmented example",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                width: double.infinity,
+                child: CupertinoSlidingSegmentedControl(
+                  children: children,
+                  onValueChanged: (index) {
+                    setState(() {
+                      selectedSliderSegmentedIndexValue =
+                          int.parse(index.toString());
+                    });
+                  },
+                  thumbColor: CupertinoColors.activeOrange,
+                  backgroundColor: CupertinoColors.white,
+                  groupValue: selectedSliderSegmentedIndexValue,
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              containers[selectedSliderSegmentedIndexValue],
+            ])
+
+```
