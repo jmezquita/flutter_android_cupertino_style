@@ -1,5 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-* linguist-detectable=false
-*.dart linguist-language=dart
+* linguist-vendored
+*.dart linguist-vendored=false
 
