@@ -365,6 +365,7 @@ CupertinoPicker(
                   const SizedBox(
                     height: 5,
                   ),
+                  //llama al container que esta definido en el punto anterior.
                   containers[selectedSegmentedIndexValue],
                   const SizedBox(
                     height: 5,
