@@ -9,6 +9,20 @@ Si te gusta el diseño de **IOS** y quiere aplicarlo en tu app para **Android**,
 
 ![flutter_android_cupertino_style](/screenshot/img1.gif)
 
+ ## CupertinoButton
+```dart
+  CupertinoButton(
+                color: Colors.black54,
+                onPressed: () {
+                  //some action here
+                },
+                child: const Text('caption here',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white)),
+              ),
+```
 
  ## CupertinoActionSheet
 
@@ -57,3 +71,106 @@ Si te gusta el diseño de **IOS** y quiere aplicarlo en tu app para **Android**,
                       ],
                     ),
 ```
+
+ ## CupertinoActivityIndicator
+```dart
+CupertinoAlertDialog(
+                          title: const Text('Cargando Data'),
+                          content: const Center(
+                            child: CupertinoActivityIndicator(
+                                animating: true, radius: 30),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('Done')),
+                          ],
+                        )
+```
+
+ ## CupertinoAlertDialog
+```dart
+ showCupertinoDialog<void>(
+                    context: context,
+                    builder: (BuildContext context) => CupertinoAlertDialog(
+                      title: const Text('Alert'),
+                      content: const Text('Do you like  CupertinoAler?'),
+                      actions: <CupertinoDialogAction>[
+                        CupertinoDialogAction(
+                          child: const Text('No'),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        CupertinoDialogAction(
+                          child: const Text('Yes'),
+                          isDestructiveAction: true,
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        )
+                      ],
+                    ),
+                  );
+```
+ ## CupertinoContextMenu
+```dart
+              CupertinoContextMenu(
+                child: Container(
+                  child: const Center(
+                      child: Text("Context Menú",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white))),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.black54,
+                  ),
+                  height: 60,
+                  width: 250,
+                ),
+                previewBuilder: (
+                  BuildContext context,
+                  Animation<double> animation,
+                  Widget child,
+                ) {
+                  return Container(
+                    child: const Center(
+                        child: Text("Cupertino Menú",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white))),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10 * animation.value),
+                      color: Colors.black54,
+                    ),
+                    height: 60,
+                    width: 250,
+                  );
+                },
+                actions: <Widget>[
+                  CupertinoContextMenuAction(
+                    isDefaultAction: true,
+                    child: const Text('Aceptar'),
+                    onPressed: () {
+                      //Navigator.pop(context);
+                    },
+                  ),
+                  CupertinoContextMenuAction(
+                    isDestructiveAction: true,
+                    child: const Text('Cancelar'),
+                    onPressed: () {
+                      // Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+```
+
+
+
+
