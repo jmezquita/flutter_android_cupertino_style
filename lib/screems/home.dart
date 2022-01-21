@@ -18,8 +18,6 @@ class _HomeState extends State<Home> {
     return Container(
    color: _color,
       child: Center(
-        
-       
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -28,7 +26,8 @@ class _HomeState extends State<Home> {
                 onPressed: () {
                   showCupertinoModalPopup<void>(
                     context: context,
-                    builder: (BuildContext context) => CupertinoActionSheet(
+                    builder: (BuildContext context) => 
+                    CupertinoActionSheet(
                       title: const Text('select a color',
                           style: TextStyle(
                               fontSize: 20,

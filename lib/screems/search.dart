@@ -101,7 +101,8 @@ class _SearchState extends State<Search> {
                 useMagnifier: true,
                 magnification: 1.3,
                 looping: true,
-              ));
+              )
+              );
         });
   }
 

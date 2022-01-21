@@ -27,21 +27,15 @@ class _SegmentedViewsState extends State<SegmentedViews> {
   List<Widget> containers = [
     Container(
         color: Colors.blue,
-        //  height: MediaQuery.of(context).size.height * 0.80,
-        // width: double.infinity,
-height: 250,
+        height: 250,
         child: const Center(child: Text('Blue contianer'))),
     Container(
         color: Colors.red,
-height: 250,
-        //  height: MediaQuery.of(context).size.height * 0.80,
-        // width: double.infinity,
+        height: 250,
         child: const Center(child: Text('Red contianer'))),
     Container(
         color: Colors.yellow,
-height: 250,
-        //  height: MediaQuery.of(context).size.height * 0.80,
-        // width: double.infinity,
+        height: 250,
         child: const Center(child: Text('Yelloe contianer'))),
   ];
 
@@ -80,7 +74,7 @@ height: 250,
                         });
                       },
                       groupValue: selectedSegmentedIndexValue,
-                     // selectedColor: CupertinoColors.activeOrange,
+                      // selectedColor: CupertinoColors.activeOrange,
                     ),
                   ),
                   const SizedBox(
@@ -119,7 +113,8 @@ height: 250,
                 height: 5,
               ),
               containers[selectedSliderSegmentedIndexValue],
-            ])),
+            ])
+            ),
           ],
         ),
       ),
