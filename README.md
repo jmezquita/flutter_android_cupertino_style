@@ -9,6 +9,13 @@ Si te gusta el diseño de **IOS** y quiere aplicarlo en tu app para **Android**,
 
 ![flutter_android_cupertino_style](/screenshot/img1.gif)
 
+
+```dart
+//Import cupertino 
+import 'package:flutter/cupertino.dart';
+```
+
+
  ## CupertinoButton
 ```dart
   CupertinoButton(
